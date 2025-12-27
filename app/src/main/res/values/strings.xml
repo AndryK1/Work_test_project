@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Work_test_project</string>
+    <string name="main">Главная</string>
+    <string name="favorite">Избранное</string>
+    <string name="profile">Аккаунт</string>
+    <string name="registration">Регистрация</string>
+    <string name="authorization">Вход</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="repeatPassword">Повторите пароль</string>
+    <string name="emailHint">example@gmail.com</string>
+    <string name="passwordHint">Введите пароль</string>
+    <string name="repeatPasswordHint">Введите пароль ещё раз</string>
+    <string name="alreadyHaveAccount">Уже есть аккаунт?</string>
+    <string name="enter">" Войти"</string>
 </resources>

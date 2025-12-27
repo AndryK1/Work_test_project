@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="max_text_size">28sp</dimen>
+    <dimen name="basicTextMargin">16dp</dimen>
+    <dimen name="basicEditTextMargin">16dp</dimen>
+    <dimen name="basicButtonMargin">16dp</dimen>
+    <dimen name="minMargin">8dp</dimen>
+    <dimen name="topMargin">140dp</dimen>
+    <dimen name="normalTextSize">16sp</dimen>
+    <dimen name="smallTextSize">12sp</dimen>
+    <dimen name="enteringMaxMargin">28dp</dimen>
+    <dimen name="hintPaddingVertical">10dp</dimen>
+    <dimen name="hintPaddingHorizontal">16dp</dimen>
+</resources>

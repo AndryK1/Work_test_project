@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="maxHeaderText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/darkerWhite</item>
+        <item name="android:textSize">@dimen/max_text_size</item>
+        <item name="android:layout_marginStart">@dimen/basicTextMargin</item>
+        <item name="android:layout_marginEnd">@dimen/basicTextMargin</item>
+        <item name="android:layout_marginTop">@dimen/topMargin</item>
+    </style>
+    
+    <style name="normalText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/darkerWhite</item>
+        <item name="android:textSize">@dimen/normalTextSize</item>
+        <item name="android:layout_marginStart">@dimen/basicTextMargin</item>
+    </style>
+
+    <style name="editTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/edit_text_bg</item>
+        <item name="android:layout_marginStart">@dimen/basicEditTextMargin</item>
+        <item name="android:layout_marginEnd">@dimen/basicEditTextMargin</item>
+        <item name="android:layout_marginTop">@dimen/minMargin</item>
+        <item name="android:textColorHint">@color/darkerWhite_50</item>
+        <item name="android:paddingTop">@dimen/hintPaddingVertical</item>
+        <item name="android:paddingBottom">@dimen/hintPaddingVertical</item>
+        <item name="android:paddingStart">@dimen/hintPaddingHorizontal</item>
+        <item name="android:paddingEnd">@dimen/hintPaddingHorizontal</item>
+    </style>
+
+    <style name="registrationButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="backgroundTint">@color/green</item>
+        <item name="android:textSize">@dimen/normalTextSize</item>
+        <item name="android:textColor">@color/darkerWhite</item>
+        <item name="android:layout_marginStart">@dimen/basicButtonMargin</item>
+        <item name="android:layout_marginEnd">@dimen/basicButtonMargin</item>
+    </style>
+
+    <style name="smallText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/smallTextSize</item>
+        <item name="android:textColor">@color/darkerWhite</item>
+    </style>
+</resources>
