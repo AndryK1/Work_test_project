@@ -13,4 +13,9 @@
     <string name="repeatPasswordHint">Введите пароль ещё раз</string>
     <string name="alreadyHaveAccount">Уже есть аккаунт?</string>
     <string name="enter">" Войти"</string>
+    <string name="noAccount">"Нет аккаунта? "</string>
+    <string name="forgotPassword">Забыл пароль?</string>
+    <string name="details">Подробнее -></string>
+    <string name="searchPlug">Search courses...</string>
+    <string name="dateFilter">"По дате добавления "</string>
 </resources>

@@ -31,6 +31,17 @@
         <item name="android:paddingStart">@dimen/hintPaddingHorizontal</item>
         <item name="android:paddingEnd">@dimen/hintPaddingHorizontal</item>
     </style>
+    
+    <style name="itemSearchText">
+        <item name="android:textColor">@color/darkerWhite</item>
+        <item name="android:textSize">@dimen/normalTextSize</item>
+        <item name="android:layout_marginStart">@dimen/basicTextMargin</item>
+    </style>
+
+    <style name="RoundedImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
 
     <style name="registrationButton">
         <item name="android:layout_width">match_parent</item>

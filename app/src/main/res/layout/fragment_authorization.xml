@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/title"
         style="@style/maxHeaderText"
-        android:text="@string/registration"
+        android:text="@string/authorization"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -51,52 +51,34 @@
         app:layout_constraintTop_toBottomOf="@id/passwordTitle"
         />
 
-    <TextView
-        android:id="@+id/repeatPasswordTitle"
-        style="@style/normalText"
-        android:text="@string/repeatPassword"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordInputField"
-        android:layout_marginTop="@dimen/basicEditTextMargin"/>
-
-    <EditText
-        android:id="@+id/repeatPasswordInputField"
-        style="@style/editTextStyle"
-        android:hint="@string/repeatPasswordHint"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/repeatPasswordTitle"
-        />
 
     <Button
-        android:id="@+id/registrationButton"
+        android:id="@+id/enterButton"
         style="@style/registrationButton"
-        android:text="@string/registration"
+        android:text="@string/authorization"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/repeatPasswordInputField"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputField"
         android:layout_marginTop="24dp"
         />
 
     <TextView
         android:id="@+id/questionTitle"
         style="@style/smallText"
-        android:text="@string/alreadyHaveAccount"
+        android:text="@string/noAccount"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/enterLink"
-        app:layout_constraintTop_toBottomOf="@id/registrationButton"
+        app:layout_constraintEnd_toStartOf="@id/registrationLink"
+        app:layout_constraintTop_toBottomOf="@id/enterButton"
         app:layout_constraintHorizontal_chainStyle="packed"
         android:layout_marginTop="@dimen/basicTextMargin"
         />
 
     <TextView
-        android:id="@+id/enterLink"
+        android:id="@+id/registrationLink"
         style="@style/smallText"
-        android:text="@string/enter"
+        android:text="@string/registration"
         android:textColor="@color/green"
 
         app:layout_constraintStart_toEndOf="@id/questionTitle"
@@ -104,6 +86,17 @@
         app:layout_constraintTop_toTopOf="@id/questionTitle"
         />
 
+    <TextView
+        android:id="@+id/forgotPasswordLink"
+        style="@style/smallText"
+        android:text="@string/forgotPassword"
+        android:textColor="@color/green"
+
+        app:layout_constraintStart_toStartOf="@id/questionTitle"
+        app:layout_constraintEnd_toEndOf="@id/registrationLink"
+        app:layout_constraintTop_toBottomOf="@id/questionTitle"
+        android:layout_marginTop="@dimen/minMargin"
+        />
 
     <View
         android:id="@+id/divideLine"
@@ -113,7 +106,7 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/enterLink"
+        app:layout_constraintTop_toBottomOf="@id/forgotPasswordLink"
         android:layout_marginStart="@dimen/basicButtonMargin"
         android:layout_marginEnd="@dimen/basicButtonMargin"
         android:layout_marginTop="32dp"/>

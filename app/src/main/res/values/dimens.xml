@@ -11,4 +11,13 @@
     <dimen name="enteringMaxMargin">28dp</dimen>
     <dimen name="hintPaddingVertical">10dp</dimen>
     <dimen name="hintPaddingHorizontal">16dp</dimen>
+    <dimen name="customButtonsTopMargin">32dp</dimen>
+    <dimen name="searchEditTextMaxPadding">56dp</dimen>
+    <dimen name="textMarginSmall">12dp</dimen>
+    <dimen name="normalRadius">16dp</dimen>
+    <dimen name="smallRadius">12dp</dimen>
+    <dimen name="largeRadius">20dp</dimen>
+    <dimen name="minPadding">4dp</dimen>
+    <dimen name="smallPadding">8dp</dimen>
+    <dimen name="roundRadius">28dp</dimen>
 </resources>
