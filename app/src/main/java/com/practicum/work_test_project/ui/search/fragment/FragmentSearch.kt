@@ -9,18 +9,19 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.practicum.work_test_project.databinding.FragmentSearchBinding
 import com.practicum.work_test_project.ui.search.CoursesAdapter
 import com.practicum.work_test_project.ui.search.SearchState
-import com.practicum.work_test_project.ui.search.viewModel.ViewModelSearch
+import com.practicum.work_test_project.ui.search.viewModel.SearchViewModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FragmentSearch  : Fragment(){
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
-    private val viewModel : ViewModelSearch by viewModel()
+    private val viewModel : SearchViewModel by viewModel()
 
     private lateinit var adapter: CoursesAdapter
 
@@ -95,16 +96,24 @@ class FragmentSearch  : Fragment(){
 
 
     private fun setupRecyclerView() {
-        adapter = CoursesAdapter(emptyList())
+        adapter = CoursesAdapter(emptyList() ,{ course ->
+            navigateToCourseDetails(course)
+        })
         binding.vacancyList.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = this@FragmentSearch.adapter
-            setHasFixedSize(true)
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun navigateToCourseDetails(course: com.practicum.work_test_project.domain.entity.Course) {
+
+        val action = FragmentSearchDirections.actionFragmentSearchToDetailsFragment(course)
+        findNavController().navigate(action)
+
     }
 }

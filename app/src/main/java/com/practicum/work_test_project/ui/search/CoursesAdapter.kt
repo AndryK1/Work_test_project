@@ -7,7 +7,8 @@ import com.practicum.work_test_project.R
 import com.practicum.work_test_project.domain.entity.Course
 
 class CoursesAdapter(
-private var courses : List<Course>
+private var courses : List<Course>,
+private val onItemClick: (Course) -> Unit
 ) : RecyclerView.Adapter<CoursesViewHolder>() {
 
     override fun onCreateViewHolder(
@@ -22,7 +23,11 @@ private var courses : List<Course>
         holder: CoursesViewHolder,
         position: Int
     ) {
-        holder.bind(courses[position])
+        holder.bind(courses[position], "")
+
+        holder.itemView.setOnClickListener {
+            onItemClick(courses[position])
+        }
     }
 
     fun updateList(newCourses: List<Course>) {

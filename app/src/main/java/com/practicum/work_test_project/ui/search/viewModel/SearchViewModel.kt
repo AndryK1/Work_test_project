@@ -1,7 +1,5 @@
 package com.practicum.work_test_project.ui.search.viewModel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.practicum.work_test_project.domain.api.CoursesRepositoryInteractor
@@ -16,7 +14,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
-class ViewModelSearch(
+class SearchViewModel(
     val interactor: CoursesRepositoryInteractor
 ) : ViewModel() {
 
@@ -61,24 +59,23 @@ class ViewModelSearch(
                 interactor.searchCourses()
                     .onStart {
                         // Показываем загрузку
-                        _state.value = SearchState.Loading
+                        renderState(SearchState.Loading)
                     }
                     .catch { e ->
-                        // Обработка ошибок
-                        _state.value = SearchState.Error(
+                        renderState(SearchState.Error(
                             message = "Ошибка: ${e.message ?: "Неизвестная ошибка"}"
-                        )
+                        ))
                     }
                     .collect { (courses, error) ->
                         when {
                             error != null -> {
-                                _state.value = SearchState.Error(error)
+                                renderState(SearchState.Error(error))
                             }
                             courses != null && courses.isNotEmpty() -> {
-                                _state.value = SearchState.Content(courses)
+                                renderState(SearchState.Content(courses))
                             }
                             else -> {
-                                _state.value = SearchState.Empty
+                                renderState(SearchState.Empty)
                             }
                         }
                     }

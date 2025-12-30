@@ -7,16 +7,25 @@
     android:layout_marginBottom="16dp"
     >
 
-    <ImageView
-        android:id="@+id/previewPhoto"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="114dp"
-        android:scaleType="centerCrop"
-
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/photo_placeholder"/>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/previewPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/photo_placeholder"
+             />
+
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:id="@+id/rateIcon"
@@ -26,7 +35,7 @@
         android:gravity="center_vertical"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/previewPhoto"
+        app:layout_constraintBottom_toBottomOf="@id/cardView"
         android:background="@drawable/bg_blur_16"
         android:layout_marginStart="@dimen/minMargin"
         android:layout_marginBottom="@dimen/minMargin"
@@ -45,7 +54,6 @@
             android:id="@+id/rateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4.9"
             android:layout_marginEnd="6dp"
             android:textColor="@color/darkerWhite"
             />
@@ -57,12 +65,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/darkerWhite"
-        android:text="22 Мая 2024"
         android:gravity="center"
         android:background="@drawable/bg_blur_16"
 
         app:layout_constraintStart_toEndOf="@id/rateIcon"
-        app:layout_constraintBottom_toBottomOf="@id/previewPhoto"
+        app:layout_constraintBottom_toBottomOf="@id/cardView"
         android:layout_marginBottom="@dimen/minMargin"
         android:layout_marginStart="4dp"
         android:paddingStart="@dimen/smallPadding"
@@ -75,8 +82,8 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_favorites_with_bg"
 
-        app:layout_constraintEnd_toEndOf="@id/previewPhoto"
-        app:layout_constraintTop_toTopOf="@id/previewPhoto"
+        app:layout_constraintEnd_toEndOf="@id/cardView"
+        app:layout_constraintTop_toTopOf="@id/cardView"
         android:layout_margin="@dimen/minMargin"/>
     
     <TextView
@@ -84,21 +91,16 @@
         style="@style/itemSearchText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="vhfdvhfjdhvfvdv fdjfvd "
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/previewPhoto"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
         android:layout_marginEnd="@dimen/basicTextMargin"
         android:layout_marginTop="@dimen/textMarginSmall"/>
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/darkerWhite_50"
-        android:text="Освой профессию 3D-дженералиста и стань универсальным специалистом, который умеет создавать 3D-модели, текстуры и анимации, а также может строить карьеру в геймдеве,"
-        android:textSize="@dimen/normalTextSize"
+        style="@style/smallTextGray"
         android:maxLines="2"
         android:ellipsize="end"
 
@@ -115,7 +117,6 @@
         style="@style/itemSearchText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="999 EU"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/description"
