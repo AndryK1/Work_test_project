@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import com.practicum.work_test_project.R
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -46,28 +48,49 @@ class DetailsFragment  : Fragment(){
         binding.favoriteButton.setOnClickListener {
             addCourseToFavorite(courseData)
         }
+
+        loadInitialFavoriteStatus(courseData.id)
     }
 
     private fun observeViewModel() {
         lifecycleScope.launch {
-
+            viewModel.favoriteState.collect { isFavorite ->
+                isFavorite?.let {
+                    updateFavoriteIcon(it)
+                }
+            }
         }
     }
 
-    private fun addCourseToFavorite(course: Course){
-        binding.favoriteButton.setImageResource(R.drawable.ic_favorites_fill)
+    private fun addCourseToFavorite(course: Course) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.toggleFavorite(course)
+        }
     }
+
+    private fun loadInitialFavoriteStatus(courseId: Long) {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.checkFavoriteStatus(courseId)
+        }
+    }
+
 
     private fun setupScreen(course: Course){
-        if (course.isFavorite){
-            binding.favoriteButton.setImageResource(R.drawable.ic_favorites_fill)
-        }else{
-            binding.favoriteButton.setImageResource(R.drawable.ic_favorites_24)
-        }
         binding.rateText.text = course.rate
         binding.publishedDate.text = course.publishDate
-        binding.title.text = course.title
+        binding.academyName.text = course.title
         binding.description.text = course.description
+    }
+
+    private fun updateFavoriteIcon(isFavorite: Boolean){
+        if (isFavorite){
+            binding.favoriteButton.setImageResource(R.drawable.ic_favorites_fill)
+            ImageViewCompat.setImageTintList(binding.favoriteButton, ContextCompat.getColorStateList(context, R.color.green))
+        }else{
+            binding.favoriteButton.setImageResource(R.drawable.ic_favorites_24)
+            ImageViewCompat.setImageTintList(binding.favoriteButton, ContextCompat.getColorStateList(context, R.color.darkGray))
+        }
+
     }
 
     override fun onDestroyView() {

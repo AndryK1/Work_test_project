@@ -6,7 +6,7 @@
     android:background="@color/black">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/ProfileTitle"
         style="@style/maxHeaderText"
         android:text="@string/authorization"
 
@@ -19,7 +19,7 @@
         android:text="@string/email"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/ProfileTitle"
         android:layout_marginTop="@dimen/enteringMaxMargin"/>
 
     <EditText
@@ -118,6 +118,7 @@
         app:icon="@drawable/ic_vk"
         app:solidColor="@color/blue"
         app:useGradient="false"
+        android:clickable="true"
 
         app:layout_constraintStart_toStartOf="@id/divideLine"
         app:layout_constraintTop_toTopOf="@id/divideLine"
@@ -133,6 +134,7 @@
         app:gradientStartColor="@color/lightOrange"
         app:gradientEndColor="@color/darkerOrange"
         app:useGradient="true"
+        android:clickable="true"
 
         app:layout_constraintEnd_toEndOf="@id/divideLine"
         app:layout_constraintTop_toTopOf="@id/vkButton"
