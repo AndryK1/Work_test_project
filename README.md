@@ -31,14 +31,14 @@
 - По ТЗ его реализация не требовалась
 
 ## Стэк 
-Kotlin
-Retrofit
-Корутины
-Flow
-Koin
-MVVM
-AdapterDelegates
-Верстка на XML
-Clean Architecture
-Многомодульность
-Room
+ - Kotlin
+ - Retrofit
+ - Корутины
+ - Flow
+ - Koin
+ - MVVM
+ - AdapterDelegates
+ - Верстка на XML
+ - Clean Architecture
+ - Многомодульность
+ - Room
