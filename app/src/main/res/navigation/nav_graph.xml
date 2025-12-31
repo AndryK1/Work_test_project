@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentSearch">
+    <fragment
+        android:id="@+id/fragmentSearch"
+        android:name="com.practicum.work_test_project.ui.search.fragment.FragmentSearch"
+        android:label="FragmentSearch" >
+        <action
+            android:id="@+id/action_fragmentSearch_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.practicum.work_test_project.ui.details.fragment.DetailsFragment"
+        android:label="DetailsFragment"
+        >
+        <argument
+            android:name="course"
+            app:argType="com.practicum.work_test_project.domain.entity.Course" />
+    </fragment>
+</navigation>

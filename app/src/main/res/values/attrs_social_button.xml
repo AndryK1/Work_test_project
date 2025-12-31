@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SocialButtonView">
+        <attr name="icon" format="reference" />
+        <attr name="solidColor" format="color" />
+        <attr name="gradientStartColor" format="color" />
+        <attr name="gradientEndColor" format="color" />
+        <attr name="useGradient" format="boolean" />
+    </declare-styleable>
+</resources>

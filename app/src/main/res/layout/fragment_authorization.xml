@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/maxHeaderText"
+        android:text="@string/authorization"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/emailTitle"
+        style="@style/normalText"
+        android:text="@string/email"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_marginTop="@dimen/enteringMaxMargin"/>
+
+    <EditText
+        android:id="@+id/emailInputField"
+        style="@style/editTextStyle"
+        android:hint="@string/emailHint"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailTitle"
+        />
+
+    <TextView
+        android:id="@+id/passwordTitle"
+        style="@style/normalText"
+        android:text="@string/password"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailInputField"
+        android:layout_marginTop="@dimen/basicEditTextMargin"/>
+
+    <EditText
+        android:id="@+id/passwordInputField"
+        style="@style/editTextStyle"
+        android:hint="@string/passwordHint"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordTitle"
+        />
+
+
+    <Button
+        android:id="@+id/enterButton"
+        style="@style/registrationButton"
+        android:text="@string/authorization"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputField"
+        android:layout_marginTop="24dp"
+        />
+
+    <TextView
+        android:id="@+id/questionTitle"
+        style="@style/smallText"
+        android:text="@string/noAccount"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/registrationLink"
+        app:layout_constraintTop_toBottomOf="@id/enterButton"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="@dimen/basicTextMargin"
+        />
+
+    <TextView
+        android:id="@+id/registrationLink"
+        style="@style/smallText"
+        android:text="@string/registration"
+        android:textColor="@color/green"
+
+        app:layout_constraintStart_toEndOf="@id/questionTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/questionTitle"
+        />
+
+    <TextView
+        android:id="@+id/forgotPasswordLink"
+        style="@style/smallText"
+        android:text="@string/forgotPassword"
+        android:textColor="@color/green"
+
+        app:layout_constraintStart_toStartOf="@id/questionTitle"
+        app:layout_constraintEnd_toEndOf="@id/registrationLink"
+        app:layout_constraintTop_toBottomOf="@id/questionTitle"
+        android:layout_marginTop="@dimen/minMargin"
+        />
+
+    <View
+        android:id="@+id/divideLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forgotPasswordLink"
+        android:layout_marginStart="@dimen/basicButtonMargin"
+        android:layout_marginEnd="@dimen/basicButtonMargin"
+        android:layout_marginTop="32dp"/>
+
+    <com.practicum.work_test_project.ui.customViews.SocialButtonView
+        android:id="@+id/vkButton"
+        android:layout_width="156dp"
+        android:layout_height="40dp"
+        app:icon="@drawable/ic_vk"
+        app:solidColor="@color/blue"
+        app:useGradient="false"
+
+        app:layout_constraintStart_toStartOf="@id/divideLine"
+        app:layout_constraintTop_toTopOf="@id/divideLine"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_marginTop="@dimen/customButtonsTopMargin"
+        />
+
+    <com.practicum.work_test_project.ui.customViews.SocialButtonView
+        android:id="@+id/classmatesButton"
+        android:layout_width="156dp"
+        android:layout_height="40dp"
+        app:icon="@drawable/ic_classmates"
+        app:gradientStartColor="@color/lightOrange"
+        app:gradientEndColor="@color/darkerOrange"
+        app:useGradient="true"
+
+        app:layout_constraintEnd_toEndOf="@id/divideLine"
+        app:layout_constraintTop_toTopOf="@id/vkButton"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

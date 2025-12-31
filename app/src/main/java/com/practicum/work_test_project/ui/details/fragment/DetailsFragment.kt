@@ -1,0 +1,77 @@
+package com.practicum.work_test_project.ui.details.fragment
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import com.practicum.work_test_project.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.practicum.work_test_project.databinding.FragmentDetailsBinding
+import com.practicum.work_test_project.domain.entity.Course
+import com.practicum.work_test_project.ui.details.viewModel.DetailsViewModel
+import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import kotlin.getValue
+
+class DetailsFragment  : Fragment(){
+    private var _binding: FragmentDetailsBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel : DetailsViewModel by viewModel()
+    private val args: DetailsFragmentArgs by navArgs()
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentDetailsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val courseData = args.course
+
+        setupScreen(courseData)
+        // Наблюдение за состояниями
+        observeViewModel()
+
+        binding.leaveButton.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+        binding.favoriteButton.setOnClickListener {
+            addCourseToFavorite(courseData)
+        }
+    }
+
+    private fun observeViewModel() {
+        lifecycleScope.launch {
+
+        }
+    }
+
+    private fun addCourseToFavorite(course: Course){
+        binding.favoriteButton.setImageResource(R.drawable.ic_favorites_fill)
+    }
+
+    private fun setupScreen(course: Course){
+        if (course.isFavorite){
+            binding.favoriteButton.setImageResource(R.drawable.ic_favorites_fill)
+        }else{
+            binding.favoriteButton.setImageResource(R.drawable.ic_favorites_24)
+        }
+        binding.rateText.text = course.rate
+        binding.publishedDate.text = course.publishDate
+        binding.title.text = course.title
+        binding.description.text = course.description
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
