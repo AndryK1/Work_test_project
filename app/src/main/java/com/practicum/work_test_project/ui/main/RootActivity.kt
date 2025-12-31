@@ -13,7 +13,6 @@ import com.practicum.work_test_project.R
 class RootActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.root_activity)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.parentContainer) as NavHostFragment

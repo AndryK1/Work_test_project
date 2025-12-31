@@ -1,5 +1,7 @@
 package com.practicum.work_test_project.ui.authorization.fragment
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -86,6 +88,19 @@ class AuthFragment : Fragment(){
             findNavController().navigate(R.id.action_authFragment_to_registrationFragment)
 
         }
+
+        binding.vkButton.setOnClickListener {
+            openBrowser("https://vk.com/")
+        }
+
+        binding.classmatesButton.setOnClickListener {
+            openBrowser("https://ok.ru/")
+        }
+    }
+
+    private fun openBrowser(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        startActivity(intent)
     }
 
     override fun onDestroyView() {

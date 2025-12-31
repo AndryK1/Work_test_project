@@ -17,6 +17,7 @@
     <dimen name="smallPadding">8dp</dimen>
     <dimen name="normalPadding">16dp</dimen>
     <dimen name="middlePadding">12dp</dimen>
+    <dimen name="min_social_button_size">40dp</dimen>
 
     <dimen name="customButtonsTopMargin">32dp</dimen>
     <dimen name="searchEditTextMaxPadding">56dp</dimen>
