@@ -78,7 +78,7 @@ class DetailsFragment  : Fragment(){
     private fun setupScreen(course: Course){
         binding.rateText.text = course.rate
         binding.publishedDate.text = course.publishDate
-        binding.title.text = course.title
+        binding.academyName.text = course.title
         binding.description.text = course.description
     }
 

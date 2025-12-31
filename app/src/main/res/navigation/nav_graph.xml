@@ -48,4 +48,8 @@
             android:id="@+id/action_registrationFragment_to_authFragment"
             app:destination="@id/authFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.practicum.work_test_project.ui.profile.fragment.ProfileFragment"
+        android:label="ProfileFragment" />
 </navigation>

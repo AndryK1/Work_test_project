@@ -26,6 +26,8 @@ class SearchViewModel(
         loadFavorites()
     }
     private var searchJob : Job? = null
+    //Для фильтрации
+    private var isSortedByDateDesc = false
     //На будущее (пока нет смысла передавать текст запроса дальше)
     private var savedQuery: String = ""
     private var lastSearchText: String? = null
@@ -59,6 +61,9 @@ class SearchViewModel(
 
     private fun search(changedText: String) {
         savedQuery = changedText
+
+        //сброс фильтра сортировки
+        isSortedByDateDesc = false
 
         viewModelScope.launch {
             if (changedText.isEmpty()) {
@@ -150,13 +155,38 @@ class SearchViewModel(
     }
 
     // обновляет текущее состояние при изменении избранного
-    private fun updateCurrentList(){
+    private fun updateCurrentList() {
         val currentState = _state.value
         if (currentState is SearchState.Content) {
             val updatedCourses = updateCoursesWithFavorites(currentState.courses)
-            _state.value = SearchState.Content(updatedCourses)
+
+            val sortedCourses = if (isSortedByDateDesc) {
+                updatedCourses.sortedByDescending { it.publishDate }
+            } else {
+                updatedCourses
+            }
+
+            _state.value = SearchState.Content(sortedCourses)
         }
     }
+
+    fun toggleSortByDate() {
+        val currentState = _state.value
+        if (currentState is SearchState.Content) {
+            isSortedByDateDesc = !isSortedByDateDesc
+
+            val sortedCourses = if (isSortedByDateDesc) {
+
+                currentState.courses.sortedByDescending { it.publishDate }
+            } else {
+                //Пока просто ревёрс
+                currentState.courses.sortedBy { it.publishDate }
+            }
+
+            _state.value = SearchState.Content(sortedCourses)
+        }
+    }
+
 
     private fun renderState(state: SearchState) {
         lastState = state

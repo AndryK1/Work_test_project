@@ -1,5 +1,6 @@
 package com.practicum.work_test_project.di
 
+import com.practicum.work_test_project.ui.authorization.viewModel.AuthViewModel
 import com.practicum.work_test_project.ui.details.viewModel.DetailsViewModel
 import com.practicum.work_test_project.ui.favorites.viewModel.FavoritesViewModel
 import com.practicum.work_test_project.ui.search.viewModel.SearchViewModel
@@ -17,5 +18,9 @@ val viewModelsModule = module {
 
     viewModel{
         FavoritesViewModel(get())
+    }
+
+    viewModel {
+        AuthViewModel()
     }
 }

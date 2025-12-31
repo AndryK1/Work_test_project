@@ -36,6 +36,7 @@
         <item name="android:paddingTop">@dimen/hintPaddingVertical</item>
         <item name="android:paddingBottom">@dimen/hintPaddingVertical</item>
         <item name="android:paddingStart">@dimen/hintPaddingHorizontal</item>
+        <item name="android:textColor">@color/darkerWhite_50</item>
         <item name="android:paddingEnd">@dimen/hintPaddingHorizontal</item>
     </style>
     

@@ -46,6 +46,10 @@ class FragmentSearch  : Fragment(){
 
         // Наблюдение за состояниями
         observeViewModel()
+
+        binding.dataFilter.setOnClickListener {
+            viewModel.toggleSortByDate()
+        }
     }
 
     private fun setupEditText() {

@@ -112,7 +112,7 @@
             app:layout_constraintStart_toEndOf="@id/rateIcon" />
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/ProfileTitle"
             style="@style/maxHeaderText"
             android:layout_marginTop="@dimen/basicTextMargin"
 
@@ -129,7 +129,7 @@
             android:background="@drawable/bg_round_white"
             android:src="@drawable/ic_placeholder_45"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title" />
+            app:layout_constraintTop_toBottomOf="@id/ProfileTitle" />
 
         <TextView
             android:id="@+id/authTitle"
@@ -139,7 +139,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/author"
             app:layout_constraintStart_toEndOf="@id/academyLogo"
-            app:layout_constraintTop_toBottomOf="@id/title" />
+            app:layout_constraintTop_toBottomOf="@id/ProfileTitle" />
 
         <TextView
             android:id="@+id/academyName"
@@ -186,12 +186,11 @@
             android:layout_marginStart="@dimen/basicTextMargin"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="@dimen/basicTextMargin"
-            android:layout_marginBottom="@dimen/minMargin"
+            android:paddingBottom="@dimen/minMargin"
             android:ellipsize="end"
             android:lineSpacingExtra="8dp"
             android:text="@string/testDescriptionPlug"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/academyLogo"
             app:layout_constraintTop_toBottomOf="@id/descriptionTitle" />
 
