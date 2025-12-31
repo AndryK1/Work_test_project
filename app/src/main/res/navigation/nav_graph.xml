@@ -21,4 +21,12 @@
             android:name="course"
             app:argType="com.practicum.work_test_project.domain.entity.Course" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentFavorites"
+        android:name="com.practicum.work_test_project.ui.favorites.fragment.FragmentFavorites"
+        android:label="FragmentFavorites" >
+        <action
+            android:id="@+id/action_fragmentFavorites_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
 </navigation>

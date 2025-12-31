@@ -1,7 +1,7 @@
 package com.practicum.work_test_project.data.dto
 
 data class CourseDto(
-    val id: Int,
+    val id: Long,
     val title: String,
     val text: String,
     val price: String,

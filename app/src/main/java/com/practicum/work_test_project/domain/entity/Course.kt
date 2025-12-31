@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Course (
-    val id: Int,
+    val id: Long,
     val title: String,
     val description: String,
     val price: String,

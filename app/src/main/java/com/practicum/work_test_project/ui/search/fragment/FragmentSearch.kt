@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.practicum.work_test_project.databinding.FragmentSearchBinding
+import com.practicum.work_test_project.domain.entity.Course
 import com.practicum.work_test_project.ui.search.CoursesAdapter
 import com.practicum.work_test_project.ui.search.SearchState
 import com.practicum.work_test_project.ui.search.viewModel.SearchViewModel
@@ -94,11 +95,26 @@ class FragmentSearch  : Fragment(){
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        refreshFavorites()
+    }
+
+    private fun refreshFavorites() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.refreshFavorites()
+        }
+    }
 
     private fun setupRecyclerView() {
-        adapter = CoursesAdapter(emptyList() ,{ course ->
+        adapter = CoursesAdapter(
+            courses = emptyList() ,
+            onItemClick = { course ->
             navigateToCourseDetails(course)
-        })
+        },
+            onFavoriteClick = {course ->
+                viewModel.toggleFavorite(course)
+            })
         binding.vacancyList.apply {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = this@FragmentSearch.adapter
@@ -110,7 +126,7 @@ class FragmentSearch  : Fragment(){
         _binding = null
     }
 
-    private fun navigateToCourseDetails(course: com.practicum.work_test_project.domain.entity.Course) {
+    private fun navigateToCourseDetails(course: Course) {
 
         val action = FragmentSearchDirections.actionFragmentSearchToDetailsFragment(course)
         findNavController().navigate(action)

@@ -19,8 +19,11 @@ class CoursesViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
     val title = itemView.findViewById<TextView>(R.id.title)
     val description = itemView.findViewById<TextView>(R.id.description)
     val price = itemView.findViewById<TextView>(R.id.price)
+    val favoritesButton = itemView.findViewById<ImageView>(R.id.favoritesIcon)
 
     fun bind(courseData: Course, imageUrl: String){
+
+        updateFavoritesButton(courseData.isFavorite)
 
         rating.text = courseData.rate
         publishDate.text = courseData.publishDate
@@ -29,4 +32,12 @@ class CoursesViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         price.text = courseData.price + " ₽"
     }
 
+    private fun updateFavoritesButton(isFavorite: Boolean) {
+        val drawableRes = if (isFavorite) {
+            R.drawable.ic_favorites_green_bg
+        } else {
+            R.drawable.ic_favorites_with_bg
+        }
+        favoritesButton.setImageResource(drawableRes)
+    }
 }
