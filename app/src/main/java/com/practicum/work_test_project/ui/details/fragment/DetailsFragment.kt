@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import com.practicum.work_test_project.R
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -83,8 +85,10 @@ class DetailsFragment  : Fragment(){
     private fun updateFavoriteIcon(isFavorite: Boolean){
         if (isFavorite){
             binding.favoriteButton.setImageResource(R.drawable.ic_favorites_fill)
+            ImageViewCompat.setImageTintList(binding.favoriteButton, ContextCompat.getColorStateList(context, R.color.green))
         }else{
             binding.favoriteButton.setImageResource(R.drawable.ic_favorites_24)
+            ImageViewCompat.setImageTintList(binding.favoriteButton, ContextCompat.getColorStateList(context, R.color.darkGray))
         }
 
     }

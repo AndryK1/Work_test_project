@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.practicum.work_test_project.R
-import com.practicum.work_test_project.domain.api.LikedHistoryInteractor
+import com.practicum.work_test_project.domain.db.LikedHistoryInteractor
 import com.practicum.work_test_project.domain.entity.Course
 
 class CoursesAdapter(

@@ -1,7 +1,7 @@
 package com.practicum.work_test_project.di
 
 import com.practicum.work_test_project.domain.api.CoursesRepositoryInteractor
-import com.practicum.work_test_project.domain.api.LikedHistoryInteractor
+import com.practicum.work_test_project.domain.db.LikedHistoryInteractor
 import com.practicum.work_test_project.domain.impl.LikedHistoryInteractorImpl
 import com.practicum.work_test_project.domain.useCase.CoursesRepositoryInteractorImpl
 import org.koin.dsl.module

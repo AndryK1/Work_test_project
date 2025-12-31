@@ -1,4 +1,4 @@
-package com.practicum.work_test_project.domain.api
+package com.practicum.work_test_project.domain.db
 
 import com.practicum.work_test_project.domain.entity.Course
 import kotlinx.coroutines.flow.Flow

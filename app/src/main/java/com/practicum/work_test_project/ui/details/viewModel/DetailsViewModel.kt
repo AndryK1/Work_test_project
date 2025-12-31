@@ -1,7 +1,7 @@
 package com.practicum.work_test_project.ui.details.viewModel
 
 import androidx.lifecycle.ViewModel
-import com.practicum.work_test_project.domain.api.LikedHistoryInteractor
+import com.practicum.work_test_project.domain.db.LikedHistoryInteractor
 import com.practicum.work_test_project.domain.entity.Course
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

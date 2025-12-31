@@ -3,7 +3,7 @@ package com.practicum.work_test_project.ui.search.viewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.practicum.work_test_project.domain.api.CoursesRepositoryInteractor
-import com.practicum.work_test_project.domain.api.LikedHistoryInteractor
+import com.practicum.work_test_project.domain.db.LikedHistoryInteractor
 import com.practicum.work_test_project.domain.entity.Course
 import com.practicum.work_test_project.ui.search.SearchState
 import kotlinx.coroutines.Job

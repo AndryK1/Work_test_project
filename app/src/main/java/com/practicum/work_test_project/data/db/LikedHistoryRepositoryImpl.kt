@@ -1,7 +1,7 @@
 package com.practicum.work_test_project.data.db
 
 import com.practicum.work_test_project.data.converters.CoursesDbConverter
-import com.practicum.work_test_project.domain.api.LikedHistoryRepository
+import com.practicum.work_test_project.domain.db.LikedHistoryRepository
 import com.practicum.work_test_project.domain.entity.Course
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

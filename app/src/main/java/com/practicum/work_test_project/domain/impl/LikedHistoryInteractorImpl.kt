@@ -1,7 +1,7 @@
 package com.practicum.work_test_project.domain.impl
 
-import com.practicum.work_test_project.domain.api.LikedHistoryInteractor
-import com.practicum.work_test_project.domain.api.LikedHistoryRepository
+import com.practicum.work_test_project.domain.db.LikedHistoryInteractor
+import com.practicum.work_test_project.domain.db.LikedHistoryRepository
 import com.practicum.work_test_project.domain.entity.Course
 import kotlinx.coroutines.flow.Flow
 
