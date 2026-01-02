@@ -12,7 +12,7 @@ class CoursesViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
     val previewPhoto = itemView.findViewById<ImageView>(R.id.previewPhoto)
     val rating = itemView.findViewById<TextView>(R.id.rateText)
     val publishDate = itemView.findViewById<TextView>(R.id.publishedDate)
-    val title = itemView.findViewById<TextView>(R.id.ProfileTitle)
+    val title = itemView.findViewById<TextView>(R.id.profileTitle)
     val description = itemView.findViewById<TextView>(R.id.description)
     val price = itemView.findViewById<TextView>(R.id.price)
     val favoritesButton = itemView.findViewById<ImageView>(R.id.favoritesIcon)
