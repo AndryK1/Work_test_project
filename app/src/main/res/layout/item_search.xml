@@ -87,7 +87,7 @@
         android:layout_margin="@dimen/minMargin"/>
     
     <TextView
-        android:id="@+id/ProfileTitle"
+        android:id="@+id/profileTitle"
         style="@style/itemSearchText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -106,7 +106,7 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ProfileTitle"
+        app:layout_constraintTop_toBottomOf="@id/profileTitle"
         android:layout_marginStart="@dimen/basicTextMargin"
         android:layout_marginEnd="@dimen/basicTextMargin"
         android:layout_marginTop="@dimen/textMarginSmall"

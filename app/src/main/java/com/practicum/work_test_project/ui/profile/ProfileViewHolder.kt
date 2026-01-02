@@ -9,7 +9,7 @@ import com.practicum.work_test_project.domain.entity.ProfileCoursesData
 
 class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    val title: TextView = itemView.findViewById(R.id.ProfileTitle)
+    val title: TextView = itemView.findViewById(R.id.profileTitle)
     val rating: TextView = itemView.findViewById(R.id.rateText)
     val publishedDate: TextView = itemView.findViewById(R.id.publishedDate)
 
@@ -26,7 +26,6 @@ class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         progressBar.progress = percent
         progressPercent.text = "$percent%"
-        progressLessons.text =
-            "${profile.completedLessons}/${profile.totalLessons} уроков"
+        progressLessons.text = "${profile.completedLessons}/${profile.totalLessons} уроков"
     }
 }
