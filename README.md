@@ -2,7 +2,6 @@
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-blue.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
 [![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2B%20MVVM-green)](https://developer.android.com/topic/architecture)
-[![Modularization](https://img.shields.io/badge/Modularization-✓-orange)](https://developer.android.com/topic/modularization)
 [![Coroutines](https://img.shields.io/badge/Coroutines-1.7.3-blue)](https://kotlinlang.org/docs/coroutines-overview.html)
 [![Flow](https://img.shields.io/badge/Flow-✓-blue)](https://developer.android.com/kotlin/flow)
 [![Room](https://img.shields.io/badge/Room-2.6.0-orange)](https://developer.android.com/training/data-storage/room)
@@ -16,7 +15,6 @@
 
 ## ✨ Что уже реализовано (и что показывает мой код)
 
-- 🧱 **Многомодульная архитектура** — код разделён на независимые модули (data, di, domain, ui, utils), что обеспечивает масштабируемость и переиспользуемость.
 - 🏛 **Clean Architecture + MVVM** — чёткое разделение ответственности между слоями: data (работа с БД и сетью), domain (бизнес-логика),di(зависимости) UI, (ViewModel и фрагменты), utils(утилитарные классы). Код легко тестировать и поддерживать.
 - 💉 **DI через Koin** — все зависимости управляются с помощью Koin (модули определены для каждого слоя), что делает код слабосвязанным.
 - 🗄 **Локальное хранилище Room** — реализована запись и чтение данных из локальной БД (используется пока для понравившихся курсов).
